@@ -42,7 +42,7 @@ const Hero = () => {
           
           <div className="flex flex-wrap gap-4">
             <motion.a
-              href="#contact"
+              href="https://wa.me/919633657120?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20booking%20a%20ride."
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-neon-red hover:bg-red-600 text-white font-bold rounded-lg shadow-[0_0_20px_rgba(255,0,80,0.4)] flex items-center gap-2 transition-all"

@@ -35,7 +35,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Home', 'Experience', 'Gallery', 'Book Now'].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-neon-gold transition-colors">
+                  <a href={item === 'Book Now' ? "https://wa.me/919633657120?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20booking%20a%20ride." : `#${item.toLowerCase().replace(' ', '-')}`} className="text-gray-400 hover:text-neon-gold transition-colors">
                     {item}
                   </a>
                 </li>

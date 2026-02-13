@@ -49,7 +49,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://wa.me/919633657120?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20booking%20a%20ride."
             className="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-neon-red to-neon-purple rounded-full text-white font-bold hover:shadow-[0_0_20px_rgba(255,0,85,0.5)] transition-all duration-300 transform hover:scale-105"
           >
             <Phone size={18} />
@@ -87,7 +87,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="https://wa.me/919633657120?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20booking%20a%20ride."
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-block text-center mt-4 px-6 py-3 bg-neon-red text-white rounded-lg font-bold"
               >
