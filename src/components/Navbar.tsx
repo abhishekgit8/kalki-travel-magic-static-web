@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.png';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,19 +21,20 @@ const Navbar = () => {
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ];
-  
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-dark-bg/90 backdrop-blur-md py-4 shadow-lg border-b border-white/10' : 'bg-transparent py-6'
+        isScrolled ? 'bg-dark-bg/90 backdrop-blur-md py-3 md:py-4 shadow-lg border-b border-white/10' : 'bg-transparent py-4 md:py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-3 group">
-          <img src={logo} alt="Kalki Travel Magic" className="h-12 w-auto object-contain filter drop-shadow-[0_0_8px_rgba(0,204,255,0.5)]" />
-          <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tighter text-white group-hover:text-neon-red transition-colors duration-300 leading-none">KALKI</span>
-            <span className="text-xs font-medium tracking-widest text-neon-blue group-hover:text-white transition-colors duration-300">TRAVEL MAGIC</span>
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+        <a href="#" className="flex items-center gap-2 md:gap-3 group">
+          {/* Icon on mobile, full logo on desktop */}
+          <Logo className="h-9 md:h-11 w-auto" variant="icon" />
+          <div className="hidden sm:flex flex-col">
+            <span className="text-lg md:text-xl font-bold tracking-tighter text-white group-hover:text-neon-red transition-colors duration-300 leading-none">KALKI</span>
+            <span className="text-[10px] md:text-xs font-medium tracking-widest text-gray-400 group-hover:text-white transition-colors duration-300">TRAVEL MAGIC</span>
           </div>
         </a>
 
@@ -59,10 +60,11 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white hover:text-neon-blue transition-colors"
+          className="md:hidden text-white hover:text-neon-blue transition-colors p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
@@ -75,13 +77,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-dark-card border-t border-white/10 overflow-hidden"
           >
-            <div className="flex flex-col p-6 space-y-4">
+            <div className="flex flex-col p-5 space-y-3">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-300 hover:text-neon-red text-lg tracking-wider"
+                  className="text-gray-300 hover:text-neon-red text-lg tracking-wider py-2"
                 >
                   {link.name}
                 </a>
@@ -89,8 +91,9 @@ const Navbar = () => {
               <a
                 href="https://wa.me/919633657120?text=Hello%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20booking%20a%20ride."
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-block text-center mt-4 px-6 py-3 bg-neon-red text-white rounded-lg font-bold"
+                className="inline-flex items-center justify-center gap-2 mt-3 px-6 py-3 bg-neon-red text-white rounded-lg font-bold"
               >
+                <Phone size={18} />
                 Book Now
               </a>
             </div>
