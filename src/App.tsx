@@ -8,6 +8,7 @@ import Destinations from './components/Destinations';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppWidget from './components/WhatsAppWidget';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Testimonials />
       <Footer />
       <ScrollToTop />
+      <WhatsAppWidget />
     </div>
   );
 }
